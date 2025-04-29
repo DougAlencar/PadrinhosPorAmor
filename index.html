@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Padrinhos por Amor</title>
+  <link rel="stylesheet" href="app/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div id="header"></div>
+  <main id="main-content"></main>
+  <div id="footer"></div>
+
+<div id="qrModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharQR()">&times;</span>
+      <h2>Doação via Pix</h2>
+      <p>Escaneie o QR Code abaixo com seu app bancário:</p>
+      <img src="img/pix.png" alt="QR Code Pix" class="qr-code">
+    </div>
+</div>
+
+  <script src="app/main.js"></script>
+</body>
+</html>
