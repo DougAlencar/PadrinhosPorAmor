@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seja um Voluntário</title>
+  <link rel="stylesheet" href="app/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+
+
+<body>
+
+  <div id="header"></div>
+
+  <main class="container">
+    <h1 class="section-title">Junte-se a nós como voluntário!</h1>
+    <p class="section-description">
+      Ser voluntário no <strong>Padrinhos por Amor</strong> é espalhar carinho, criar memórias e transformar o Natal de muitas crianças. Escolha como deseja ajudar!
+    </p>
+
+    <section class="voluntario-opcoes">
+      <div class="card">
+        <h3>🎉 Organização de eventos</h3>
+        <p>Ajude na preparação da festa de Natal, desde a montagem até a recepção das crianças.</p>
+      </div>
+      <div class="card">
+        <h3>🎁 Logística de doações</h3>
+        <p>Participe da triagem, separação e entrega das sacolinhas de presente.</p>
+      </div>
+      <div class="card">
+        <h3>📢 Divulgação online</h3>
+        <p>Nos ajude a alcançar mais pessoas compartilhando nosso projeto nas redes sociais.</p>
+      </div>
+      <div class="card">
+        <h3>📷 Criação de conteúdo</h3>
+        <p>Se você manda bem com fotos, vídeos ou design, também pode contribuir!</p>
+      </div>
+    </section>
+
+    <section class="form-voluntario">
+      <h2>Preencha seus dados:</h2>
+      <form id="voluntarioForm">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <input type="text" name="telefone" placeholder="Telefone (opcional)" />
+        <select name="area" required>
+          <option value="">Área de interesse</option>
+          <option value="eventos">Organização de eventos</option>
+          <option value="logistica">Logística de doações</option>
+          <option value="divulgacao">Divulgação nas redes sociais</option>
+          <option value="conteudo">Criação de conteúdo</option>
+        </select>
+        <textarea name="mensagem" rows="4" placeholder="Deixe uma mensagem (opcional)"></textarea>
+        <button type="submit" class="btn">Quero ser voluntário!</button>
+      </form>
+    </section>
+    
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("voluntarioForm");
+  
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+  
+          const formData = new FormData(form);
+  
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              Swal.fire({
+                icon: 'success',
+                title: 'Obrigado!',
+                text: 'Recebemos seu interesse. Em breve entraremos em contato 😊',
+                confirmButtonColor: '#f4978e'
+              });
+              form.reset();
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Erro!',
+                text: 'Não foi possível enviar sua mensagem. Tente novamente mais tarde.',
+              });
+            }
+          }).catch(error => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Erro de conexão',
+              text: 'Verifique sua internet ou tente novamente mais tarde.',
+            });
+          });
+        });
+      }
+    });
+  </script>
+
+  <div id="footer"></div>
+
+ 
+</body>
+</html>
