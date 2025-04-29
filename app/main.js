@@ -70,10 +70,12 @@ function setupVoluntarioForm() {
   });
 }
 
+// Função para abrir o modal
 function abrirQR() {
   document.getElementById("qrModal").style.display = "block";
 }
 
+// Função para fechar o modal
 function fecharQR() {
   document.getElementById("qrModal").style.display = "none";
 }
