@@ -69,3 +69,11 @@ function setupVoluntarioForm() {
     });
   });
 }
+
+function abrirQR() {
+  document.getElementById("qrModal").style.display = "block";
+}
+
+function fecharQR() {
+  document.getElementById("qrModal").style.display = "none";
+}
