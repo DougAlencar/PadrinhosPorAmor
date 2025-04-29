@@ -12,15 +12,19 @@
   <main id="main-content"></main>
   <div id="footer"></div>
 
-<div id="qrModal" class="modal">
+<!-- Botão para abrir o QR Code -->
+<a href="javascript:void(0);" class="btn" onclick="abrirQR()">Mostrar QR Code</a>
+
+<!-- Modal do QR Code -->
+  <div id="qrModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="fecharQR()">&times;</span>
-      <h2>Doação via Pix</h2>
-      <p>Escaneie o QR Code abaixo com seu app bancário:</p>
-      <img src="img/pix.png" alt="QR Code Pix" class="qr-code">
+      <h2>QR Code para Doação</h2>
+      <img src="caminho/do/qr-code.png" alt="QR Code" />
     </div>
-</div>
+  </div>
 
   <script src="app/main.js"></script>
+  
 </body>
 </html>
